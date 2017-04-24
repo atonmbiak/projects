@@ -1,0 +1,40 @@
+//   Beispiel 12.2 Sequenziell gespeicherte Queue
+//   Datei bsp_12_2.cpp
+
+//#include <iostream>
+#include "queue.h"
+#include "data.h"
+
+using namespace std;
+
+typedef Queue<Data> DataQueue;
+
+int main()
+{
+  DataQueue dataQueue;
+  Data data;
+  char op;
+  int numberToPut;
+
+   do {
+	  try {
+		  cout << "Enter Operand (+,-,x): ";
+		  cin >> op;
+		  switch(op) {
+		  case '+' : cout << "Enter number to put: ";
+			  cin >> numberToPut;
+			  data = Data(numberToPut);
+			  dataQueue.put(data);
+			  break;
+		  case '-' : data = dataQueue.get();
+			  cout << data << endl;
+			  break;
+		  }
+	  }
+	  catch (QueueUnderflow) {
+		  cout << "Queue Underflow\n";
+	  }
+   } while (op != 'x');
+   return 1;
+}
+

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ChatPage.qml</file>
+        <file>LoginPage.qml</file>
+        <file>images/hs-mannheim.jpg</file>
+    </qresource>
+</RCC>
